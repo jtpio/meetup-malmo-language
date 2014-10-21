@@ -1,0 +1,18 @@
+{
+  "name": "meetup-malmo-language",
+  "version": "1.0.0",
+  "description": "Language Exchange Malmö analysis",
+  "author": "Jeremy Tuloup",
+  "keywords": [
+    "meetup",
+    "api",
+    "nlp"
+  ],
+  "dependencies": {
+    "express": "^4.9.8",
+    "lodash": "^2.4.1",
+    "natural": "^0.1.28",
+    "request": "^2.45.0"
+  },
+  "license": "MIT"
+}

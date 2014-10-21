@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Language Exchange Malmö analysis">
+
+      <title>Language Exchange Malmö analysis</title>
+
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="indicator page-header">
+        <h1>Language Exchange Malmö analysis</h1>
+        <p class="lead">Made with the Meetup API, node, basic NLP and d3.</p>
+      </div>
+
+      <div class="row">
+        <div class="indicator col-md-4">
+          <span id="total-group" class="number"> </span> <br>
+          <span class="number-text" > members </span>
+        </div>
+        <div class="indicator col-md-4">
+          <span id="bilinguals" class="number"> </span> <br>
+          <span class="number-text" > bilinguals+</span>
+        </div>
+        <div class="indicator col-md-4">
+          <span id="no-data" class="number"> </span> <br>
+          <span class="number-text" > unknown </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="viz" class="indicator col-md-12"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h3> Details </h3>
+            <ul id="details" class="list-group"></ul>
+        </div>
+
+        <div class="col-md-6">
+          <h3> Unknown </h3>
+          Some languages could not be matched: written in another language, no answer, random characters ...
+          <ul id="unknown" class="list-group"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.3/d3-tip.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
