@@ -53,7 +53,6 @@ module.exports = function() {
                     for (var lang in dictEN) {
                         var dist = natural.JaroWinklerDistance(lang, t);
                         if (dist > DISTANCE_THREHOLD) {
-                            // console.log('comparing token', t, ' with lang ', lang, ', got distance: ', dist);
                             res[lang] = (res[lang] + 1) || 1;
                             m++;
                             break; // stop for this language

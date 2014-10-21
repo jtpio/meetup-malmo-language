@@ -9,7 +9,7 @@ var malmo = {'question': 2187832, 'url': 'intercambio3'};
 
 var MEETUP_KEY = process.env.MEETUP_KEY,
 	QUESTION_ID = malmo.question,
-	REFRESH_TIME = 1000 * 60 * 10;
+	REFRESH_TIME = 1000 * 60 * 30;
 
 var urlObj = {
 	protocol: 'https',
@@ -43,11 +43,9 @@ function crawl(destUrl) {
 			}
 		}
 
-		console.log(res.meta.count);
 		if (res.meta.hasOwnProperty('next') && res.meta.next !== '') {
 			crawl(res.meta.next);
 		} else {
-			// end, print result
 			analyzer.printResults();
 		}
 	});
@@ -55,7 +53,7 @@ function crawl(destUrl) {
 
 crawl(dest);
 
-setTimeout(function () {
+setInterval(function () {
 	analyzer.init();
 	crawl(dest);
 }, REFRESH_TIME);
