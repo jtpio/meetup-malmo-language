@@ -31,17 +31,25 @@ function crawl(destUrl) {
             console.log(err);
             return;
         }
-        var res = JSON.parse(body);
+
+        var res;
+        try {
+            res = JSON.parse(body);
+        } catch (e) {
+            console.error('Error parsing response from Meetup: ', JSON.stringify(e));
+            return;
+        }
         var results = res.results;
 
-        for (var i = 0; i < results.length; i++) {
-            var answers = results[i].answers;
-            for (var j = 0; j < answers.length; j++) {
-                if (answers[j].question_id === QUESTION_ID) {
-                    analyzer.extractLanguage(answers[j].answer);
-                }
+        results.forEach(function (result) {
+            var ans = result.answers.filter(function (ans) {
+                return ans.question_id === QUESTION_ID;
+            })[0];
+
+            if (ans) {
+                analyzer.extractLanguage(ans.answer);
             }
-        }
+        });
 
         if (res.meta.hasOwnProperty('next') && res.meta.next !== '') {
             crawl(res.meta.next);
