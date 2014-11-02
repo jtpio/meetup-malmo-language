@@ -68,20 +68,22 @@ $.getJSON('languages', function(data) {
         .call(tip);
 
     var node = svg.selectAll('.node')
-      .data(bubble.nodes({children: items})
+        .data(bubble.nodes({children: items})
         .filter(function(d) { return !d.children; }))
-    .enter().append('g')
-      .attr('class', 'node')
-      .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+        .enter().append('g')
+        .attr('class', 'node')
+        .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
 
     node.append('circle')
-      .attr('r', function(d) { return d.r; })
-      .style('fill', function(d) { return color(d.packageName); })
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide);
+        .attr('r', function(d) { return d.r; })
+        .style('fill', function(d) { return color(d.packageName); })
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide);
 
     node.append('text')
-      .attr('dy', '.3em')
-      .style('text-anchor', 'middle')
-      .text(function(d) { return d.className.substring(0, d.r / 3); });
+        .attr('dy', '.3em')
+        .style('text-anchor', 'middle')
+        .text(function(d) { return d.className.substring(0, d.r / 3); });
+
+
 });
