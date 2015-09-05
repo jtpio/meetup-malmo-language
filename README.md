@@ -1,6 +1,6 @@
 ## Meetup Malmö Language ##
 
-This is a visualization of the Language Exchange Meetup group in Malmö.
+This is a visualization of the Language Exchange Meetup group in Malmö, Sweden.
 
 Visualization inspired by [d3 Bubble Chart](http://bl.ocks.org/mbostock/4063269)
 
